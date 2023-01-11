@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Collections = ({ albumSongss, newAddedAlb, newAddecColl }) => {
+const Collections = ({  newAddecColl }) => {
 
  const condition = newAddecColl
   return (
@@ -15,7 +15,7 @@ const Collections = ({ albumSongss, newAddedAlb, newAddecColl }) => {
               {newAddecColl.map((data, index) =>
           
                 <div key={index} className="py-4 relative flex justify-center ">
-                      <img src={data.cover} alt="cover image" className='w-[359px] h-[234px] md:w-[213px] md:h-[234px] rounded-3xl hover:animate-pulse ' />
+                      <img src={data.cover} alt="cover" className='w-[359px] h-[234px] md:w-[213px] md:h-[234px] rounded-3xl hover:animate-pulse ' />
                       <div className='absolute top-40 md:top-44 left-16 md:left-8 z-10'>
                           <div className='text-[#EFEEE0]'>
                             <p className=' text-2xl font-normal'>{data.title}</p> 

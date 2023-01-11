@@ -9,12 +9,6 @@ const Nav = ({nav, handleNav}) => {
   };
 
 
-    // const [isActive, setIsActive] = useState(false)
-    
-    // const handleClick = (data) => {
-    //     const {name} = Event.currentTarget
-    //     setIsActive(name)
-    // }
     return (
       <div className=' bg-[#1E1E1E] pt-7 px-7 h-full md:h-full'>
             <div className='  flex  space-x-12 items-center'>

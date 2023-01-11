@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Likes_coll_btns = ({activeButton, setActiveButton}) => {
+const LikesCollBtns = ({activeButton, setActiveButton}) => {
   return (
     <div className='pl-10 md:pl-6'>
           <div className='space-x-4'>
@@ -18,4 +18,4 @@ const Likes_coll_btns = ({activeButton, setActiveButton}) => {
   )
 }
 
-export default Likes_coll_btns
+export default LikesCollBtns

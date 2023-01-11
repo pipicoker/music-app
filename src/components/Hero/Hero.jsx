@@ -1,5 +1,4 @@
 import React from 'react'
-import Side from './Side'
 import Big from './Big'
 import Top from './Top'
 

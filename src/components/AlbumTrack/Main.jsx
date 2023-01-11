@@ -1,18 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 
 import { SlOptionsVertical } from 'react-icons/sl';
 import { IoIosHeartEmpty } from 'react-icons/io';
 
 
 
-const Main = ({ playlist, newAddedAlb, GetFavorite, changeSongPlaying }) => {
-  // const [loved, setLoved] = useState('white')
-  // const handleClick = (event) => {
-  //   const btn = event.target
-  //   btn.style.color = loved === 'white' ? 'red' : 'white'
-  //   setLoved(loved === 'white' ? 'red' : 'white')
-  // };
-
+const Main = ({  newAddedAlb, GetFavorite, changeSongPlaying }) => {
+  
   if (typeof newAddedAlb !== 'undefined') {
          document.mappedArray = newAddedAlb.map((item) => {
   return {
@@ -46,7 +40,7 @@ const Main = ({ playlist, newAddedAlb, GetFavorite, changeSongPlaying }) => {
 
               <div className='flex items-center   space-x-6 md:w-3/5'>
                 <div className='md:w-1/5 flex items-center   space-x-6 text-white'>
-                  <img src={list.cover} alt="cover image" className='w-10 h-10 rounded-lg' />
+                  <img src={list.cover} alt="cover" className='w-10 h-10 rounded-lg' />
                   <IoIosHeartEmpty
                     className="w-6 h-5 text-[#D7BE69]"
                     // onMouseEnter={handleClick}

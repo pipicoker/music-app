@@ -1,34 +1,17 @@
-// import React from 'react'
 
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
 
-// import required modules
 import { FreeMode, Pagination } from "swiper";
 
 const NewReleases = ({ latests }) => { 
 
-  const items = [
-    latests.map((latest) => 
-    
-      
-        <div key={latest.id} className="shrink-0  w-[153px] text-left">
-                      <img src={latest.cover} alt="" className="w-[153px] h-[153px] rounded-2xl"/>
-                      <p className='text-sm text-[#FFFFFF]'>{latest.title}</p>
-                      <p className='text-sm text-gray-400 font-semibold'>{latest.artist}</p>
-      </div> 
-    
-                  
-    )
-    
-  ]
+ 
 
      
   return (
@@ -37,13 +20,7 @@ const NewReleases = ({ latests }) => {
           <h4 className='font-bold text-xl text-[#EFEEE0] text-left  md:pl-8'>New releases</h4>
           
       <div className='flex w-full overflow-y-hidden  space-x-8 mt-4'>
-        {/* {latests.map((latest) => 
-                  <div key={latest.id} className="shrink-0 w-[153px] text-left">
-                      <img src={latest.cover} alt="" className="w-[153px] h-[153px] rounded-2xl"/>
-                      <p className='text-sm text-[#FFFFFF]'>{latest.title}</p>
-                      <p className='text-sm text-gray-400 font-semibold'>{latest.artist}</p>
-              </div>
-      )} */}
+        
 
         <Swiper
           slidesPerView={3}

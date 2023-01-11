@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 import Likes from './Likess'
-import Likes_coll_btns from './Likes_coll_btns'
+import LikesCollBtns from './Likes_Coll_Btns'
 import Collections from './Collections'
 
-const Likes_coll = ({ liked, setLiked , newLiked, albumSongss, newAddedAlb, newAddecColl}) => {
+const LikesColl = ({ liked, setLiked , newLiked, albumSongss, newAddedAlb, newAddecColl}) => {
   
    const [activeButton, setActiveButton] = useState('likes'); // set default active button to 'likes'
 
    
   return (
     <div className='h-screen w-screen bg-[#1E1E1E]'>
-      <Likes_coll_btns activeButton={activeButton} setActiveButton={setActiveButton} />
+      <LikesCollBtns activeButton={activeButton} setActiveButton={setActiveButton} />
       <div>
         {activeButton === 'likes' && (
                 <Likes liked={liked} setLiked={setLiked} newLiked={newLiked} />
@@ -26,4 +26,4 @@ const Likes_coll = ({ liked, setLiked , newLiked, albumSongss, newAddedAlb, newA
   )
 }
 
-export default Likes_coll
+export default LikesColl

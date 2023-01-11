@@ -62,7 +62,7 @@ function Home({album, setAlbum, liked, setLiked, GetFavorite, activecolor, func,
           // console.log(songsFromServer)
         }
       getAlbum()
-    }, [])
+    }, [setAlbum])
 
     return (
         <div className="Home ">

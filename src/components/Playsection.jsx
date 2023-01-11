@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react'
-import season from "./assets/season.png"
+import React, {  useRef } from 'react'
 import { BiShuffle } from 'react-icons/bi';
 import { BiSkipNext } from 'react-icons/bi';
 import { BiPlay } from 'react-icons/bi';
@@ -10,7 +9,6 @@ import { GiSpeaker } from 'react-icons/gi';
 
 const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, currentsong, setCurrentsong, }) => {
   const clickRef = useRef()
-  const change = useRef()
 
   const playPause = () => {
     setIsplaying(!isplaying)    
@@ -49,8 +47,8 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
 
 // skip song a step backward
   const skipBack = () => {
-    const index = playlist.findIndex(x => x.title == currentsong.title)
-    if (index == 0) {
+    const index = playlist.findIndex(x => x.title === currentsong.title)
+    if (index === 0) {
       setCurrentsong(playlist[playlist.length - 1])
       
     }
@@ -69,9 +67,9 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
     // setIsplaying(true)
     audioElem.current.play()
     
-    const index = playlist.findIndex(x => x.title == currentsong.title)
+    const index = playlist.findIndex(x => x.title === currentsong.title)
 
-    if (index == playlist.length - 1) {
+    if (index === playlist.length - 1) {
       setCurrentsong(playlist[0])      
     }
     else {

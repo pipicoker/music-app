@@ -1,12 +1,11 @@
 import React from 'react'
-import lead from "../assets/lead.png"
 
 import { BiPlay } from 'react-icons/bi';
 import { AiFillHeart } from 'react-icons/ai';
 import {IoIosMusicalNotes} from 'react-icons/io'
 
 
-const Header = ({mappedData, newAddedAlb, currentAlbumDetails, clickedAlbumDetails, addSongToCollections}) => {
+const Header = ({ currentAlbumDetails,  addSongToCollections}) => {
   
   
   return (

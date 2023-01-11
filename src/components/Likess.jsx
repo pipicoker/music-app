@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react'
 
 import { AiFillHeart } from 'react-icons/ai';
 
 
-function Likes({ liked, setLiked , newLiked}) {
+function Likes({  newLiked}) {
   
   const condition = newLiked
-  const check = () => {
-    console.log(newLiked);
-  }
+  // const check = () => {
+  //   console.log(newLiked);
+  // }
  
   return (
     <div className="Likes py-12 px-12">

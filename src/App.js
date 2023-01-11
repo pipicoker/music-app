@@ -5,7 +5,7 @@ import Side from './components/Hero/Side';
 
 import Nav from './components/Nav';
 import Home from './components/Home';
-import Likes_coll from './components/Likes_coll';
+import LikesColl from './components/Likes_coll';
 import Playsection from './components/Playsection';
 import AlbumTrack from './components/AlbumTrack/AlbumTrack';
 
@@ -109,7 +109,7 @@ function App() {
   }
   
   const skipToNextSongOnEnded = () => {
-    const index = playlist.findIndex(x => x.title == currentsong.title)
+    // const index = playlist.findIndex(x => x.title == currentsong.title)
     // setCurrentsong(playlist[index + 1])
     //       audioElem.current.currentTime = 0
     console.log("uytrewqa")
@@ -199,9 +199,9 @@ function App() {
       <div className='flex '>
         <Side className="h-full"/>
         <Routes className="top-0">
-          <Route path="/" element={<Home album={album} setAlbum={setAlbum} liked={liked} setLiked={setLiked} GetFavorite={GetFavorite} activecolor={activecolor} func={func} mappedData={mappedData} addSongToalbumSongs={addSongToalbumSongs} clickedAlbumDetails={clickedAlbumDetails} />} />
+          <Route path="/" element={<Home album={album} setAlbum={setAlbum} liked={liked} setLiked={setLiked} GetFavorite={GetFavorite} activecolor={activecolor} setActivecolor={setActivecolor} func={func} mappedData={mappedData} addSongToalbumSongs={addSongToalbumSongs} clickedAlbumDetails={clickedAlbumDetails} />} />
 
-          <Route path="/Likes_coll" element={<Likes_coll liked={liked} setLiked={setLiked} newLiked={window.newLiked} albumSongs={albumSongs} newAddedAlb={document.addedalbumSongs} newAddecColl={window.addedCollection} />} />
+          <Route path="/Likes_coll" element={<LikesColl liked={liked} setLiked={setLiked} newLiked={window.newLiked} albumSongs={albumSongs} newAddedAlb={document.addedalbumSongs} newAddecColl={window.addedCollection} />} />
 
           <Route path="/AlbumTrack" element={<AlbumTrack playlist={playlist} newAddedAlb={window.addedalbumSongs} mappedData={mappedData} currentAlbumDetails={window.currentAlbumDetails} GetFavorite={GetFavorite} clickedAlbumDetails={clickedAlbumDetails} addSongToCollections={addSongToCollections} changeSongPlaying={changeSongPlaying} />} />
 

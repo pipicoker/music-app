@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Navdata from '../data/navdata'
 
-import {AiFillHome} from 'react-icons/ai'
-import {SiApplemusic} from 'react-icons/si'
-import {RiRadio2Fill} from 'react-icons/ri'
-import {HiOutlineSquares2X2} from 'react-icons/hi2'
-import {HiUser} from 'react-icons/hi'
-import {IoLogIn} from 'react-icons/io5'
+
 
 const Side = () => {
    const [activeButtonId, setActiveButtonId] = useState("one");

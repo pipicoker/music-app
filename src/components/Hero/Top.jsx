@@ -1,14 +1,12 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Topdata from '../data/topdata'
 
 
-import love2 from "../assets/love2.png"
 import { IoIosHeartEmpty } from 'react-icons/io';
 
 
-const Top = ({ liked, setLiked, album, GetFavorite, activecolor, func, mappedData, addSongToalbumSongs, clickedAlbumDetails }) => {
+const Top = ({  GetFavorite, func, mappedData, addSongToalbumSongs, clickedAlbumDetails }) => {
   
   
 
