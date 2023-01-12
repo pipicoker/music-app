@@ -1,12 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navdata from './data/navdata'
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-const Nav = ({nav, handleNav}) => {
+const Nav = ({nav, setNav, handleNav}) => {
     const [activeButtonId, setActiveButtonId] = useState("one");
+
+    let location = useLocation();
+    useEffect(() => {
+    setNav(false);
+  }, [location.pathname]);
+
+
 
     const handleClick = data => {
     setActiveButtonId(data);
-  };
+    };
+    
+
 
 
     return (
@@ -40,28 +51,28 @@ const Nav = ({nav, handleNav}) => {
                     </div>
                 </form>
           
-                {/* <form>   
-                    <div className="relative pr-2 ">
-                        <div className="flex absolute inset-y-0 right-0 items-center pl-3 pointer-events-none">
-                            <input type="search" id="default-search" className="block p-4 pl-10 bg-[#1E1E1E] " placeholder='search artist' />
-                            
-                            <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        </div>
-                        
-                    
-                    </div>
-                </form> */}
+                
 
             </div>
 
             <div className={nav ? 'md:hidden w-80 h-screen absolute z-10 -ml-7 pt-4 bg-[#1E1E1E]  pl-6 space-y-12   ease-in duration-500' : "hidden "}>
+                
+
                 {Navdata.slice(0,).map((data) =>
-                    <div key={data.id} className={`flex items-center space-x-8 text-[#FFFFFF]  ${data.id === activeButtonId ? 'text-yellow-700' : 'text-[#EFEEE0]'}`}
+                    
+                    <Link to={data.path} key={data.id} className={`flex items-center space-x-8 text-[#FFFFFF]  ${data.id === activeButtonId ? 'text-yellow-700' : 'text-[#EFEEE0]'}`}
                      onClick={() => handleClick(data.id)}
                     >
+                        
                         {data.pix}
-                        <p className=  " font-bold text-lg">{data.name}</p>
-                    </div>
+                        
+                         <p className=  " font-bold text-lg">{data.name}</p>
+
+                    
+                        
+                        
+                        </Link>
+                        
                 )}
             </div>  
             

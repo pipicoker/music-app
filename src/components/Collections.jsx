@@ -4,10 +4,10 @@ const Collections = ({  newAddecColl }) => {
 
  const condition = newAddecColl
   return (
-      <div>
+      <div className='py-12 px-12'>
         <div>
           {typeof condition === 'undefined' ?
-            <p>You have no favorite song yet</p>
+            <p className='text-gray-100'>You have no collections yet</p>
             
             : 
             

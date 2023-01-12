@@ -195,7 +195,7 @@ function App() {
   return (
     <div className="App ">
 
-      <Nav nav={nav} handleNav={handleNav} />
+      <Nav nav={nav} setNav={setNav} handleNav={handleNav} />
       <audio src={currentsong.audio} ref={audioElem} onTimeUpdate={onPlaying} onEnded={skipToNextSongOnEnded } />
       <Playsection nav={nav} playlist={playlist} setPlaylist={setPlaylist} isplaying={isplaying} setIsplaying={setIsplaying} audioElem={audioElem} currentsong={currentsong} setCurrentsong={setCurrentsong} 
       />

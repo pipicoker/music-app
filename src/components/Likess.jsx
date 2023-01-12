@@ -14,7 +14,7 @@ function Likes({  newLiked}) {
       <div>
         <div>
           {typeof condition === 'undefined' ?
-            <p>You have no favorite song yet</p>
+            <p className='text-gray-100'>You have no favorite song yet</p>
             
             : 
             
