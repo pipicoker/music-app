@@ -9,7 +9,7 @@ const Nav = ({nav, setNav, handleNav}) => {
     let location = useLocation();
     useEffect(() => {
     setNav(false);
-  }, [location.pathname]);
+  }, [location.pathname, setNav]);
 
 
 
