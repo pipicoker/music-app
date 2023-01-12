@@ -108,11 +108,15 @@ function App() {
     setCurrentsong({ ...currentsong, "progress": ct / duration * 100, "length": duration })
   }
   
+  // skips to the next song when the current song finish playing
   const skipToNextSongOnEnded = () => {
-    // const index = playlist.findIndex(x => x.title == currentsong.title)
-    // setCurrentsong(playlist[index + 1])
-    //       audioElem.current.currentTime = 0
-    console.log("uytrewqa")
+    audioElem.current.currentTime = 0;
+    audioElem.current.play();
+    setIsplaying(true);
+
+    const index = playlist.findIndex(x => x.title === currentsong.title)
+
+    setCurrentsong(playlist[index + 1]);
 
   }
 
@@ -189,7 +193,7 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App ">
 
       <Nav nav={nav} handleNav={handleNav} />
       <audio src={currentsong.audio} ref={audioElem} onTimeUpdate={onPlaying} onEnded={skipToNextSongOnEnded } />

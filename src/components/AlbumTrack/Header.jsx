@@ -25,19 +25,19 @@ const Header = ({ currentAlbumDetails,  addSongToCollections}) => {
 
                   <p className='text-[#EFEEE0] mt-2.5 text-sm font-normal'>64 songs ~ 16 hrs+</p>
 
-                  <div className='mt-6 flex flex-3 space-x-2'>
-                    <div className='bg-gray-700 px-5 py-3 space-x-3  flex rounded-3xl items-center  justify-center '>
+                  <div className='mt-6 flex flex-3 space-x-2 mr-2 md:mr-0'>
+                    <div className='bg-gray-700 px-2 md:px-5 py-3 space-x-3 cursor-pointer  flex rounded-3xl items-center  justify-center '>
                       <div className='bg-[#FACD66] w-4  h-4 rounded-full '>
                         <BiPlay />
                       </div>
-                      <p className='text-sm font-normal text-[#FFFFFF]'>Play all</p>
+                      <p className='text-xs md:text-sm font-normal text-[#FFFFFF] '>Play all</p>
                     </div>
 
-                    <div className='bg-gray-700 px-4 py-4 space-x-3  flex rounded-3xl items-center  justify-center '>
+                    <div className='bg-gray-700 px-2 md:px-4 py-4 space-x-3  flex cursor-pointer rounded-3xl items-center  justify-center '>
                       <div className='bg-[#FACD66] text-black w-4  h-4 rounded-sm '>
                         <IoIosMusicalNotes />
                       </div>
-                   <p className='text-sm font-normal text-[#FFFFFF]'
+                   <p className= 'text-xs md:text-sm font-normal text-[#FFFFFF] '
                    onClick={() => {
                     addSongToCollections({
                       title: data.title,
@@ -48,11 +48,11 @@ const Header = ({ currentAlbumDetails,  addSongToCollections}) => {
                    >Add to collections</p>
                     </div>
 
-                    <div className='bg-gray-700 px-5 py-3 space-x-3  flex rounded-3xl items-center  justify-center '>
+                    <div className='bg-gray-700 px-4 md:px-5 py-3 space-x-3  flex cursor-pointer rounded-3xl items-center  justify-center '>
                       <div className=' text-[#E5524A]  '>
                         <AiFillHeart />
                       </div>
-                      <p className='text-sm font-normal text-[#FFFFFF]'>Like</p>
+                      <p className='text-xs md:text-sm font-normal text-[#FFFFFF]'>Like</p>
                     </div>
                   </div>
                 </div>

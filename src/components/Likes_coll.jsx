@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Likes from './Likess'
-import LikesCollBtns from './Likes_Coll_Btns'
+import LikesCollBtns from './Likes_coll_btns'
 import Collections from './Collections'
 
 const LikesColl = ({ liked, setLiked , newLiked, albumSongss, newAddedAlb, newAddecColl}) => {

@@ -47,6 +47,12 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
 
 // skip song a step backward
   const skipBack = () => {
+    audioElem.current.currentTime = 0;
+    audioElem.current.oncanplaythrough = () => {
+        audioElem.current.play();
+    }
+    setIsplaying(true);
+
     const index = playlist.findIndex(x => x.title === currentsong.title)
     if (index === 0) {
       setCurrentsong(playlist[playlist.length - 1])
@@ -56,24 +62,24 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
       setCurrentsong(playlist[index - 1])
       
     }
-    audioElem.current.currentTime = 0
 
     
   }
 
     // skip song one step forward
   const skipToNext = () => {
-    audioElem.current.currentTime = 0
-    // setIsplaying(true)
-    audioElem.current.play()
-    
+    audioElem.current.currentTime = 0;
+    audioElem.current.oncanplaythrough = () => {
+        audioElem.current.play();
+    }
+    setIsplaying(true);
     const index = playlist.findIndex(x => x.title === currentsong.title)
 
     if (index === playlist.length - 1) {
       setCurrentsong(playlist[0])      
     }
     else {
-      setCurrentsong(playlist[index + 1])
+      setCurrentsong(playlist[index + 1]);
     }
 
   }

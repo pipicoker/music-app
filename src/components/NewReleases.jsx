@@ -25,10 +25,9 @@ const NewReleases = ({ latests }) => {
         <Swiper
           slidesPerView={3}
         spaceBetween={20}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
+          freeMode={true}
+          
+        
         modules={[FreeMode, Pagination]}
         className="mySwiper grid  grid-cols-2 md:hidden"
       >
@@ -50,10 +49,8 @@ const NewReleases = ({ latests }) => {
         <Swiper
           slidesPerView={7}
         spaceBetween={20}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
+          freeMode={true}
+        
         modules={[FreeMode, Pagination]}
         className="mySwiper md:grid  grid-cols-5 hidden"
       >

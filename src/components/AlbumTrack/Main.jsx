@@ -24,7 +24,7 @@ const Main = ({  newAddedAlb, GetFavorite, changeSongPlaying }) => {
     
    
       return (
-      <section className=' pt-6 bg-[#1E1E1E] space-y-8 md:mr-14 pb-32'>
+      <section className=' pt-6 bg-[#1E1E1E] space-y-8 md:mr-14 mx-4 md:mx-0 pb-32'>
           {globalArray.map((list) => 
             <div key={list.id} className="px-2.5 py-3 bg-[#33373B] flex justify-between items-center rounded-2xl"
               onClick={() => {
