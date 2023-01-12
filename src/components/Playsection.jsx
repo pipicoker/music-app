@@ -1,4 +1,4 @@
-import React, {  useRef } from 'react'
+import React, {  useRef, useEffect } from 'react'
 import { BiShuffle } from 'react-icons/bi';
 import { BiSkipNext } from 'react-icons/bi';
 import { BiPlay } from 'react-icons/bi';
@@ -6,8 +6,9 @@ import { BiPause } from 'react-icons/bi';
 import { AiFillStepBackward } from 'react-icons/ai';
 import { RiRepeatOneLine } from 'react-icons/ri';
 import { GiSpeaker } from 'react-icons/gi';
+import { useState } from 'react';
 
-const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, currentsong, setCurrentsong, }) => {
+const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, setPlaylist, currentsong, setCurrentsong, }) => {
   const clickRef = useRef()
 
   const playPause = () => {
@@ -15,35 +16,14 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
   }
 
   const onchange = (e) => {
-    // let width = clickRef.current.clientWidth
-    // const offset = e.nativeEvent.offsetX
-
-    // const divprogress = offset / width * 100.0
-    // const progress = parseFloat(divprogress.toFixed(2))
-    // const prog = progress / 100 * currentsong.length
-    // audioElem.current.currentTime = parseFloat(prog.toFixed(2))
-
     audioElem.current.currentTime = e.target.value;
     currentsong.progress = audioElem.current.currentTime
-
   }
 
   const changeVolume = (event) => {
     audioElem.current.volume = event.target.value / 100
   }
 
-
-  // const test = (e) => {
-  //   let width = clickRef.current.clientWidth
-  //   const offset = e.nativeEvent.offsetX
-
-  //   const divprogress = offset / width * 100.0
-  //   const progress = parseFloat(divprogress.toFixed(2))
-  //   const prog = progress / 100 * currentsong.length
-  //   audioElem.current.currentTime = parseFloat(prog.toFixed(2))
-
-  //   console.log(audioElem.current.currentTime)
-  // }
 
 // skip song a step backward
   const skipBack = () => {
@@ -62,8 +42,6 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
       setCurrentsong(playlist[index - 1])
       
     }
-
-    
   }
 
     // skip song one step forward
@@ -83,7 +61,30 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
     }
 
   }
-  
+  const [shuffle, setShuffle] = useState(false);
+  // shuffle songs
+  const shuffleSongs = () => {
+    const shuffledSongs = playlist.sort(() => Math.random() - 0.5)
+    setPlaylist(shuffledSongs)      
+  }
+
+  useEffect(() => {
+    setCurrentsong(playlist[0]);
+   }, [playlist, setCurrentsong]);
+
+  const handleShuffleClick = () => {
+    setShuffle(!shuffle);
+    if (!shuffle) {
+      shuffleSongs();
+      console.log(playlist);
+    } 
+    else {
+      setPlaylist(playlist.reverse())
+      console.log(playlist);
+    }
+  }
+    
+    
 
   return (
     <div className={nav ? "hidden " : "fixed bottom-0 h-[102px] w-screen  bg-gradient-to-b from-black bg-blend-lighten backdrop-blur-md px-8 md:pl-24 md:pr-16 pt-8 pb-11 shadow-2xl flex justify-between  z-50"}>
@@ -97,7 +98,7 @@ const Playsection = ({nav, audioElem, isplaying, setIsplaying, playlist, current
 
       <div className=''>
         <div className='flex space-x-8 items-center justify-center'>
-          <BiShuffle className='hidden md:block w-6 h-4 text-gray-400'/>
+          <BiShuffle className={`hidden md:block w-6 h-4  ${shuffle ? "text-yellow-700" : "text-gray-400"}`} onClick={handleShuffleClick}/>
           <AiFillStepBackward className='  w-4 h-6 text-white' onClick={skipBack}/>
           <div className='w-8 h-8 md:w-6 md:h-6 rounded-full bg-yellow-300 shadow-xl flex justify-center items-center' onClick={playPause}>
             {isplaying ? <BiPause className='text-[#EFEEE0] w-4 h-4' /> : <BiPlay className='text-[#EFEEE0] w-4 h-4' />}

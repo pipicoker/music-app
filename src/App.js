@@ -141,8 +141,8 @@ function App() {
       
     }  
       const btn = event.target
-      btn.style.color = loved === '#D7BE69' ? 'red' : '#D7BE69'
-      setLoved(loved === '#D7BE69' ? 'red' : '#D7BE69')
+      btn.style.color = loved === 'red' ? '#D7BE69' : 'red'
+      setLoved(loved === 'red' ? '#D7BE69' : 'red')
   }
   
   const func = () => {
@@ -197,7 +197,7 @@ function App() {
 
       <Nav nav={nav} setNav={setNav} handleNav={handleNav} />
       <audio src={currentsong.audio} ref={audioElem} onTimeUpdate={onPlaying} onEnded={skipToNextSongOnEnded } />
-      <Playsection nav={nav} playlist={playlist} setPlaylist={setPlaylist} isplaying={isplaying} setIsplaying={setIsplaying} audioElem={audioElem} currentsong={currentsong} setCurrentsong={setCurrentsong} 
+      <Playsection nav={nav} playlist={playlist} setPlaylist={setPlaylist}  isplaying={isplaying} setIsplaying={setIsplaying} audioElem={audioElem} currentsong={currentsong} setCurrentsong={setCurrentsong} 
       />
       {/* <button onClick={func}>click me</button> */}
       <div className='flex '>
